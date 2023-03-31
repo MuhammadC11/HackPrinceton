@@ -1,0 +1,18 @@
+[{
+    "name": "600 Warmup",
+    "exercises": ["400 Freestyle (light)","100 Kick","100 Drill"],
+    "level": "intermediate",
+    "time": 15
+},
+{
+    "name": "400 Warmup",
+    "exercises": ["200 Freestyle (light)","100 Kick","100 Drill"],
+    "level": "intermediate",
+    "time": 10
+},
+{
+
+}]
+
+
+//how to determine your level?
