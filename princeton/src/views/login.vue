@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <div id="login">
+      <label id="el"> Email: </label>
       <input id="email" type="text" ref="email" v-model="login" />
 
-      <br />
-
+      <label id="pl"> Password: </label>
       <input id="password" type="text" ref="password" v-model="password" />
-      <br />
 
       <button>Register</button>
     </div>
   </div>
+  <p>{{ login }}</p>
 </template>
 
 <style>
@@ -52,6 +52,18 @@ button {
   top: 50%;
   left: 30%;
 }
+
+#el {
+  position: relative;
+  top: 20%;
+  left: 30%;
+}
+
+#pl {
+  position: relative;
+  top: 30%;
+  left: 30%;
+}
 </style>
 
 <script>
@@ -64,6 +76,17 @@ export default {
   created() {
     this.createUser();
   },
+  data() {
+    return {
+      login: "",
+      password: "",
+    };
+  },
+};
+</script>
+
+<script>
+export default {
   data() {
     return {
       login: "",
