@@ -1,16 +1,19 @@
 [{
-    "name": "450 Warmup 1",
+    "id": 0,
+    "name":"450 Warmup 1",
     "exercises": ["250 Freestyle", "100 Kick", "100 Pull"],
     "level": "intermediate",
     "time": 60
 },
 {
+    "id": 1,
     "name": "450 Warmup 2",
     "exercises": ["150 Freestyle", "150 Kick", "150 Pull"],
     "level": "intermediate",
     "time": 60
 },
 {
+    "id": 2,
     "name": "300 Warmup 1B",
     "exercises": ["2 100 Freestyle", "50 Kick", "50 Pull"],
     "level": "beginner",
@@ -18,30 +21,35 @@
     
 },
 {
+    "id": 3,
     "name": "300 Warmup 2B",
     "exercises": ["100 Freestyle (light)", "100 Kick", "100 Pull"],
     "level": "beginner",
     "time": 60
 },
 {
+    "id": 4,
     "name": "300 Warmup 1i",
     "exercises": ["200 Freestyle (light)", "50 kick", "50 pull"],
     "level": "intermediate",
     "time": 30
 },
 {
+    "id": 5,
     "name": "300 Warmup 2i",
     "exercises": ["100 Freestyle (light)", "100 kick", "100 pull"],
     "level": "intermediate",
     "time": 30
 },
 {
+    "id": 6,
     "name": "200 Warmup 1B",
     "exercises": ["100 Freestyle (light)", "50 kick", "50 pull"],
     "level": "beginner",
     "time": 30
 },
 {
+    "id": 7,
     "name": "200 Warmup 2B",
     "exercises": ["4 50 Freestyle Cacth Up"],
     "level": "beginner",
