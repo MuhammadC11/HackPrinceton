@@ -1,11 +1,6 @@
 <template>
   <div>
-    <form
-      class="login_container"
-      @submit.prevent="login()"
-      data-aos="fade-right"
-    >
-      <h1>Sign in to an existing account</h1>
+    <form class="login_container" @submit.prevent="login()">
       <div class="inputs">
         <label id="el"> Email: </label>
         <input
@@ -39,12 +34,9 @@
 </template>
 
 <script setup>
-// on mounted initialize AOS
-import AOS from "aos";
 import { ref } from "vue";
 import router from "../router";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-AOS.init();
 const email = ref("");
 const password = ref("");
 const errorMsg = ref();
@@ -160,12 +152,5 @@ body {
   font-family: "Quicksand", sans-serif;
 
   margin: auto;
-}
-h1 {
-  font-size: 1.5rem;
-  color: #ffffff;
-  font-family: "Quicksand", sans-serif;
-  margin: auto;
-  margin-top: 75px;
 }
 </style>

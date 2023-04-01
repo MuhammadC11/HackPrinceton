@@ -2,7 +2,6 @@
   <div>
     <form class="login_container" @submit.prevent="register()">
       <div class="inputs">
-        <h1>Create an account</h1>
         <label id="el"> Email: </label>
         <input
           id="email"
