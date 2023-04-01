@@ -1,4 +1,6 @@
 <template>
+  <div class="title">Swim</div>
+ 
 </template>
 
 <script>
