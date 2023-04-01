@@ -1,81 +1,143 @@
 <template>
-  <div class="container">
-    <form @submit.prevent="callApi()" id="login">
-      <label id="el"> Email: </label>
-      <input
-        id="email"
-        type="text"
-        ref="email"
-        v-model="login"
-        placeholder="Enter your email"
-      />
+  <div class="login_container">
+    <form>
+      <div class="inputs">
+        <label id="el"> Email: </label>
+        <input
+          id="email"
+          type="text"
+          v-model="login"
+          placeholder="Enter your email"
+        />
 
-      <label id="pl"> Password: </label>
-      <input
-        id="password"
-        type="text"
-        ref="password"
-        v-model="password"
-        placeholder="Enter your password"
-      />
-
-      <button type="submit">Register</button>
+        <label id="pl"> Password: </label>
+        <input
+          id="password"
+          type="text"
+          v-model="password"
+          placeholder="Enter your password"
+        />
+        <button type="submit" class="submit-btn" aria-label="Submit.">
+          Submit
+        </button>
+      </div>
     </form>
   </div>
-
-  <p>{{ login }}</p>
 </template>
 
-<style>
-body {
-  background-color: rgb(32, 139, 227);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 1500px 1000px;
-}
-
-#login {
-  border: 1px solid;
-  width: 200px;
-  height: 350px;
-  font-size: 22px;
-  background-color: white;
-  padding: 30px; /* space between content and the border */
-  margin: 10px;
-  position: absolute;
-  top: 23%;
-  left: 40%;
+<style lang="scss" scoped>
+.login_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5rem;
 }
 
 #email {
-  position: relative;
-  top: 40%;
-  left: 13%;
+  text-align: center;
+  width: 20rem;
+  height: 4rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0000006a;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.602);
+  }
 }
-
 #password {
-  position: relative;
-  top: 45%;
-  left: 13%;
+  text-align: center;
+  width: 20rem;
+  height: 4rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0000006a;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.602);
+  }
 }
 
-button {
-  position: relative;
-  top: 50%;
-  left: 30%;
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-#el {
-  position: relative;
-  top: 20%;
-  left: 30%;
+.search-btn {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 1.2rem;
+  font-weight: 700;
+  transition: transform 200ms, background 200ms;
+}
+.submit-btn {
+  // create a hover effect that makes the button a little bit bigger and darker
+  background-color: rgba(39, 38, 38, 0.979);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  // create a hover effect that makes the button a little bit bigger and darker
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+.clear-btn {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  margin-left: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 1.2rem;
+  font-weight: 700;
+  transition: transform 200ms, background 200ms;
+}
+.clear-btn:hover {
+  // create a hover effect that makes the button a little bit bigger and darker
+
+  transform: translateY(-2px);
+}
+.clear-btn:focus-visible {
+  outline: 1px solid #000;
+  outline-offset: 1px;
 }
 
-#pl {
-  position: relative;
-  top: 30%;
-  left: 30%;
+.item {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 100vw;
+  background-color: transparent;
+
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.478);
+  }
+  p {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+  }
 }
 </style>
 
