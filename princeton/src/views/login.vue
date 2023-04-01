@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form @submit.prevent="callApi()">
+    <form @submit.prevent="callApi()" id="login">
       <label id="el"> Email: </label>
       <input
         id="email"

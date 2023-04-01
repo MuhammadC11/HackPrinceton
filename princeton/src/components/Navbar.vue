@@ -20,11 +20,10 @@
 @import "https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap";
 
 .home_button {
-  width: 50%;
-  text-align: left;
+  margin: 0;
+  margin-right: 70rem;
 }
-.profile-btn {
-  margin-left: 9rem;
+.login-btn {
 }
 .gh_button {
   border: none;
@@ -141,6 +140,7 @@
   display: flex;
   align-self: right;
 }
+/*
 .button {
   background-color: #e1e5ed00;
 
@@ -183,4 +183,5 @@
   box-shadow: none;
   transform: translateY(0);
 }
+*/
 </style>
