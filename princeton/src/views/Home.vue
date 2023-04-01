@@ -77,7 +77,6 @@ body {
   font-size: 1.5rem;
   color: #ffffff;
   font-family: "Quicksand", sans-serif;
-
   margin: auto;
 }
 .container {

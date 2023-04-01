@@ -1,25 +1,26 @@
 <template>
   <div>
-    <form class="login_container">
+    <form class="login_container" @submit.prevent="login()">
       <div class="inputs">
         <label id="el"> Email: </label>
         <input
           id="email"
           type="text"
-          v-model="login"
+          v-model="email"
           placeholder="Enter your email"
         />
 
         <label id="pl"> Password: </label>
         <input
           id="password"
-          type="text"
+          type="password"
           v-model="password"
           placeholder="Enter your password"
         />
         <button type="submit" class="submit-btn" aria-label="Submit.">
           Submit
         </button>
+        <p v-if="errorMsg">{{ errorMsg }}</p>
       </div>
 
       <h5>Don't have an account?</h5>
@@ -31,6 +32,45 @@
     </form>
   </div>
 </template>
+
+<script setup>
+import { ref } from "vue";
+import router from "../router";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+const email = ref("");
+const password = ref("");
+const errorMsg = ref();
+//const router = useRouter();
+const login = () => {
+  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      router.push("/dashboard");
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      switch (errorCode) {
+        case "auth/invalid-email":
+          errorMsg.value = "Invalid email address";
+          break;
+        case "auth/user-disabled":
+          errorMsg.value = "User disabled";
+          break;
+        case "auth/user-not-found":
+          errorMsg.value = "User not found";
+          break;
+        case "auth/wrong-password":
+          errorMsg.value = "Wrong password";
+          break;
+        default:
+          errorMsg.value = "Unknown error";
+      }
+      // ..
+    });
+};
+</script>
 
 <style lang="scss" scoped>
 .login_container {
@@ -114,38 +154,3 @@ body {
   margin: auto;
 }
 </style>
-
-<script>
-// the relevant methods
-import { collection, addDoc } from "firebase/firestore";
-// the firestore instance
-import { db } from "../firebase/init";
-
-export default {
-  data() {
-    return {
-      login: "",
-      password: "",
-      test: "",
-    };
-  },
-  methods: {
-    async createUser() {
-      // 'users' collection reference
-      const colRef = collection(db, "users");
-      // data to send
-      const dataObj = {
-        firstName: "John",
-        lastName: "Doe",
-        dob: "1990",
-      };
-
-      // create document and return reference to it
-      const docRef = await addDoc(colRef, dataObj);
-
-      // access auto-generated ID with '.id'
-      console.log("Document was created with ID:", docRef.id);
-    },
-  },
-};
-</script>

@@ -1,5 +1,7 @@
 <template>
-  <Navbar />
+  <div id="app">
+    <Navbar />
+  </div>
 
   <router-view v-slot="{ Component }">
     <transition name="route" mode="out-in">

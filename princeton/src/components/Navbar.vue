@@ -135,6 +135,7 @@
   background-color: #ffffff00;
   position: fixed;
   z-index: 8;
+  margin-top: 1rem;
 }
 .about_button {
   display: flex;

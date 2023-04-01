@@ -1,2 +1,11 @@
 
 
+body{
+    background-color: #0094fe;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
