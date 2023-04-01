@@ -5,15 +5,44 @@
         <button class="button1">Home</button>
       </router-link>
     </div>
+
     <div class="login-btn">
       <router-link to="/login">
         <button class="button1">Login</button>
       </router-link>
     </div>
+    
+    <div class="login-btn">
+      <router-link to="/login">
+        <button @click="handleSignOut" v-if="isLoggedIn" class="button1">Logout</button>
+      </router-link>
+    </div>
+
   </div>
 </template>
 
-<script setup></script>
+<script setup>import { onMounted, ref } from 'vue';
+import { getAuth, onAuthStateChanged, signOut } from '@firebase/auth';
+const isLoggedIn = ref(false);
+let auth;
+
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user) { isLoggedIn.value = true;
+    } else { isLoggedIn.value = false; }
+  });
+});
+
+const handleSignOut = () => {
+  signOut(auth).then(() => {
+    isLoggedIn.value = false;
+    router.push("signin");
+  }).catch((error) => {
+    console.log(error);
+  });
+};
+</script>
 
 <style scoped>
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
