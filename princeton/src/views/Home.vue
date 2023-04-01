@@ -2,7 +2,6 @@
   <body>
     <div class="container">
       <h1 class="title">Random Swim Workout Generator</h1>
-      
 
       <h2 class="survey_input">What do you want to get better at?</h2>
 
@@ -24,14 +23,11 @@
 
       <br />
 
-      <button id="generate_btn" @click="showWorkout, randomID" > Generate </button>
+      <button id="generate_btn" @click="showWorkout, randomID">Generate</button>
 
       <div v-if="show">
-
-          <p>  {{ randomID }}</p>
-
+        <p>{{ randomID }}</p>
       </div>
-
     </div>
   </body>
 </template>
@@ -53,11 +49,11 @@ export default {
     showWorkout() {
       this.show = !this.show;
     },
-    randomID(){
-      const randomIndex = Math.floor(Math.random() * jsonWarmUp.wu.length)
-      this.randomId = jsonWarmUp.wu[randomIndex].id
-    }
-  }
+    randomID() {
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp.wu.length);
+      this.randomId = jsonWarmUp.wu[randomIndex].id;
+    },
+  },
 };
 </script>
 
