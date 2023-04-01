@@ -3,15 +3,13 @@
   <body>
   </body>
     <div class="container" data-aos="fade-left">
+      <h1> </h1>
       <h1 class="title">Random Swim Workout Generator</h1>
-
       <h2 class="survey_input">What do you want to get better at?</h2>
-
       <select name="race" id="survey_input">
         <option value="blank"></option>
-
         <option value="50 Freestyle">50 Freestyle</option>
-      </select>
+    </select>
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
 
@@ -22,9 +20,13 @@
       </select>
 
       <br />
-
+      <!--generates workout-->
+      <!-- 1 Intermediate 60 -->\
+      <!-- 2 Intermediate 30 -->
+      <!-- 3 Beginner 60 -->
+      <!-- 4 Beginner 30 -->
+      
       <button id="generate_btn" @click="randomID">Generate</button>
-
       <div v-if="show">
         <p>{{ randomWU }}</p>
         <br />
@@ -93,6 +95,7 @@ export default {
       zoom: 1.09,
     });
   },
+  
   beforeDestroy() {
     if (this.vantaEffect) {
       this.vantaEffect.destroy();
@@ -101,9 +104,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 body {
-  background-color: #0094fe;
+ background-color: #0094fe;
 }
 .title {
   text-align: center;
@@ -130,7 +133,7 @@ select {
   width: 20rem;
   height: 4rem;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #ffffff;
   background-color: #0000006a;
@@ -157,4 +160,5 @@ select {
     background-color: rgba(0, 0, 0, 0.602);
   }
 }
+
 </style>
