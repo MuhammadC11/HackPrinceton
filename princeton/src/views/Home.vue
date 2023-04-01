@@ -63,8 +63,6 @@ export default {
       MainSet4: jsonMainSet4,
       randomWU: null,
       randomSET: null,
-      is60: false,
-      is30: false,
     };
   },
   methods: {
@@ -88,10 +86,6 @@ export default {
       minWidth: 200.0,
       scale: 1.0,
       scaleMobile: 1.0,
-      shininess: 79.0,
-      waveHeight: 17.5,
-      waveSpeed: 1.1,
-      zoom: 1.09,
     });
   },
   
