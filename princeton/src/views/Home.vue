@@ -1,8 +1,7 @@
 <template>
   <body>
-    <h1 class="title">Random Swim Workout Generator</h1>
-
     <div class="container">
+      <h1 class="title">Random Swim Workout Generator</h1>
       <h2 class="survey_input">What level swimmer are you?</h2>
 
       <select name="level" id="survey_input">
@@ -85,7 +84,6 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 5rem;
 }
 
 select {
