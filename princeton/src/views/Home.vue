@@ -1,7 +1,13 @@
 <template>
-  <div class="title">Swim</div>
- 
+  <body>
+    <div class = "container">
+  <div class="title">
+    <h1> Swim </h1>
+    </div>
+  </div>
+</body>
 </template>
+
 
 <script>
 export default {};
