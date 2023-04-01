@@ -83,7 +83,7 @@ button {
 // the relevant methods
 import { collection, addDoc } from "firebase/firestore";
 // the firestore instance
-import db from "./firebase/init.js";
+import { db } from "../firebase/init";
 
 export default {
   data() {
