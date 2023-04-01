@@ -14,6 +14,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const users = firebase.database().ref('users/' + userId).set({
+  username: name,
+  email: email
+});
 
 //initializeApp(firebaseConfig);
 // init firestore service
