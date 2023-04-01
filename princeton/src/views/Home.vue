@@ -1,5 +1,9 @@
 <template>
   <body>
+<<<<<<< Updated upstream
+=======
+    <h2 class="title">Random Swim Workout Generator</h2>
+>>>>>>> Stashed changes
     <div class="container">
       <h1 class="title">Random Swim Workout Generator</h1>
 
@@ -107,6 +111,7 @@ select {
   color: #ffffff;
   background-color: #000000ba;
   outline: none;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:focus {
     background-color: rgba(0, 0, 0, 0.602);
