@@ -18,6 +18,7 @@
   
   
   <style>
+  
   body{
   
     background-image: url("./assets/water.jpeg");
@@ -54,6 +55,7 @@
     left: 13%;
   
   }
+
   </style>
   
   
