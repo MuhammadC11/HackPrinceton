@@ -56,7 +56,3 @@ body {
 }
 
 </style>
-
-
-
-// Path: princeton\src\views\Home.vue
