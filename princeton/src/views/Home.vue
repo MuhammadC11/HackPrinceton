@@ -1,8 +1,6 @@
 <template>
   <body>
 
-    <h2 class="title">Random Swim Workout Generator</h2>
-
     <div class="container">
       <h1 class="title">Random Swim Workout Generator</h1>
 
