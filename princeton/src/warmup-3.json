@@ -1,0 +1,19 @@
+{"wu":
+[
+{
+    "id": 1,
+    "name": "Beginner Warmup 1",
+    "exercises": ["2 100 Freestyle", "50 Kick", "50 Pull"],
+    "level": "beginner",
+    "time": 60
+    
+},
+{
+    "id": 2,
+    "name": "Beginner Warmup 2",
+    "exercises": ["100 Freestyle (light)", "100 Kick", "100 Pull"],
+    "level": "beginner",
+    "time": 60
+}
+]
+}

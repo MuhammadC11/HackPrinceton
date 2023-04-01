@@ -1,0 +1,33 @@
+{"set":
+[
+{   
+    "id": 0,
+    "name": "Intermediate Set 1",
+    "exercises": 
+    [
+    "11 25 Freestyle (fast)", 
+    "2 100 kick (medium), 25 kick",
+    "2 100 Pull (5-3-5-7), 25 Pull",
+    "2 50 Freestyle Drill (fist), 2 50 Freestyle Drill (3 touch)",
+    "4 50 Freestyle (Fast at Flags), 2 25 Freestyle (fast), 4 50 Freestyle (fast)"
+    ],
+    "level": "intermediate",
+    "time": 60
+
+},
+{   
+    "id": 1,
+    "name": "Intermediate Set 2",
+    "exercises": 
+    [
+    "5 50 Freestyle (Fast at Flags), 4 50 Freestyle (fast)", 
+    "100 Kick (medium), 100 Kick (medium), 25 Kick",
+    "2 100 Pull (5-3-5-7), 25 Pull",
+    "2 50 Freestyle Drill (fist), 2 50 Freestyle Drill (6 kick 1 pull)",
+    "11 25 Freestyle (fast)"
+    ],
+    "level": "intermediate",
+    "time": 60
+}
+]
+}
