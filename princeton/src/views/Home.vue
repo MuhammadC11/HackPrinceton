@@ -1,8 +1,10 @@
 <template>
   <body>
+
+    <h2 class="title">Random Swim Workout Generator</h2>
+
     <div class="container">
       <h1 class="title">Random Swim Workout Generator</h1>
-      
 
       <h2 class="survey_input">What do you want to get better at?</h2>
 
@@ -30,8 +32,8 @@
           <br>
           <p>  {{ randomSET }} </p>
 
-      </div>
 
+      </div>
     </div>
   </body>
 </template>
@@ -72,7 +74,7 @@ export default {
       this.show = !this.show
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -125,6 +127,7 @@ select {
   color: #ffffff;
   background-color: #000000ba;
   outline: none;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:focus {
     background-color: rgba(0, 0, 0, 0.602);
