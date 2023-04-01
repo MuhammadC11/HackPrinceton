@@ -110,10 +110,10 @@ export default {
       minWidth: 200.0,
       scale: 1.0,
       scaleMobile: 1.0,
-      shininess: 60.0,
+      shininess: 79.0,
       waveHeight: 17.5,
       waveSpeed: 1.1,
-      zoom: 1.12,
+      zoom: 1.09,
     });
   },
   beforeDestroy() {
