@@ -13,7 +13,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 body {
   background-color: rgb(32, 139, 227);
   background-repeat: no-repeat;
