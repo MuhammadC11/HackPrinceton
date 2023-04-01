@@ -34,7 +34,7 @@
       <button id="generate_btn" v-on:click="showWorkout">Generate</button>
 
       <div v-if="show">
-        <div v-for="set in WarmpUp" :key="set.id">
+        <div v-for="set in WarmUp" :key="set.id">
           <p>{{ set.exercises }}</p>
         </div>
       </div>
@@ -50,7 +50,7 @@ import jsonMainSet from "../set.json";
 export default {
   data() {
     return {
-      show: true,
+      show: false,
       WarmUp: jsonWarmUp,
       MainSet: jsonMainSet,
     };
