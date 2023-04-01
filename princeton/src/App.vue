@@ -1,30 +1,49 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <body>
+
+  <div id = "login">
+    
+
+
+
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  
+  </body>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+
+<style>
+body{
+
+  background-image: url("./assets/water.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 1500px 1000px;
+
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+#login{
+    border: 5px solid;
+    width: 200px;
+    height: 350px;
+    font-size: 22px;
+    background-color: beige;
+    padding: 30px; /* space between content and the border */
+    margin: 10px;
+    position: absolute;
+    top: 23%;
+    left: 40%;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
+
+
+
+<script>
+
+
+
+</script>
