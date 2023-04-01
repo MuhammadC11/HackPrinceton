@@ -1,15 +1,20 @@
 <template>
   <div class="container">
-    <div id="login">
-      <input id="email" type="text" ref="email" v-model="login" />
+    <form>
+      <div id="login">
+        <label id="el"> Email </label>
+        <input id="email" type="text" ref="email" v-model="login" />
 
-      <br />
+        <br />
 
-      <input id="password" type="text" ref="password" v-model="password" />
-      <br />
+        <label id="pl"> Password </label>
+        <input id="password" type="text" ref="password" v-model="password" />
+        <br />
 
-      <button>Register</button>
-    </div>
+        <button>Register</button>
+        <p>{{ login }}</p>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -50,6 +55,18 @@ body {
 button {
   position: relative;
   top: 50%;
+  left: 30%;
+}
+
+#el {
+  position: relative;
+  top: 40%;
+  left: 32%;
+}
+
+#pl {
+  position: relative;
+  top: 43%;
   left: 30%;
 }
 </style>
