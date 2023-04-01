@@ -1,24 +1,19 @@
 <template>
   <div class="container">
-    <form>
-      <div id="login">
-        <label id="el"> Email </label>
-        <input id="email" type="text" ref="email" v-model="login" />
+    <div id="login">
+      <input id="email" type="text" ref="email" v-model="login" />
 
-        <br />
+      <br />
 
-        <label id="pl"> Password </label>
-        <input id="password" type="text" ref="password" v-model="password" />
-        <br />
+      <input id="password" type="text" ref="password" v-model="password" />
+      <br />
 
-        <button>Register</button>
-        <p>{{ login }}</p>
-      </div>
-    </form>
+      <button>Register</button>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 body {
   background-color: rgb(32, 139, 227);
   background-repeat: no-repeat;
@@ -55,18 +50,6 @@ body {
 button {
   position: relative;
   top: 50%;
-  left: 30%;
-}
-
-#el {
-  position: relative;
-  top: 40%;
-  left: 32%;
-}
-
-#pl {
-  position: relative;
-  top: 43%;
   left: 30%;
 }
 </style>
