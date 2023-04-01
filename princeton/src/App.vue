@@ -1,6 +1,8 @@
 
 <template>
+
   <view-router/>
+  
 </template>
 
 
