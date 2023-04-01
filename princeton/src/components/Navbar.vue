@@ -20,8 +20,8 @@
 @import "https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap";
 
 .home_button {
-  margin: 0;
-  margin-right: 70rem;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .login-btn {
 }

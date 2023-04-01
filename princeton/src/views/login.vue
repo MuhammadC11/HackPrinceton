@@ -1,6 +1,7 @@
 <template>
   <div>
     <form class="login_container" @submit.prevent="login()">
+      <h1>Sign in to an existing account</h1>
       <div class="inputs">
         <label id="el"> Email: </label>
         <input
@@ -152,5 +153,12 @@ body {
   font-family: "Quicksand", sans-serif;
 
   margin: auto;
+}
+h1{
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-family: "Quicksand", sans-serif;
+  margin: auto;
+  margin-top: 75px;
 }
 </style>
