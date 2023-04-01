@@ -73,20 +73,6 @@ import { collection, addDoc } from "firebase/firestore";
 import db from "./firebase/init.js";
 
 export default {
-  created() {
-    this.createUser();
-  },
-  data() {
-    return {
-      login: "",
-      password: "",
-    };
-  },
-};
-</script>
-
-<script>
-export default {
   data() {
     return {
       login: "",
