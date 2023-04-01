@@ -21,6 +21,13 @@
           Submit
         </button>
       </div>
+
+      <h5>Don't have an account?</h5>
+      <div class="register-btn">
+        <router-link to="/register">
+          <button class="button1">Register</button>
+        </router-link>
+      </div>
     </form>
   </div>
 </template>
