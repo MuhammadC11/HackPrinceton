@@ -1,5 +1,6 @@
 <template>
   <body>
+
     <div class="container">
       <h1 class="title">Random Swim Workout Generator</h1>
 
@@ -7,9 +8,7 @@
 
       <select name="race" id="survey_input">
         <option value="blank"></option>
-        <option value="Recreational Lap Swimming">
-          Recreational Lap Swimming
-        </option>
+        
         <option value="50 Freestyle">50 Freestyle</option>
       </select>
 
@@ -23,38 +22,57 @@
 
       <br />
 
-      <button id="generate_btn" @click="showWorkout, randomID">Generate</button>
+      <button id="generate_btn" @click="randomID" > Generate </button>
 
       <div v-if="show">
-        <p>{{ randomID }}</p>
+
+          <p>  {{ randomWU }} </p>
+          <br>
+          <p>  {{ randomSET }} </p>
+
+
       </div>
     </div>
   </body>
 </template>
 
 <script>
-import jsonWarmUp from "../warmup.json";
+import jsonWarmUp1 from "../warmup-1.json";
+import jsonWarmUp2 from "../warmup-2.json";
+import jsonWarmUp3 from "../warmup-3.json";
+import jsonWarmUp4 from "../warmup-4.json";
 
-import jsonMainSet from "../set.json";
+import jsonMainSet1 from "../set-1.json";
+import jsonMainSet2 from "../set-2.json";
+import jsonMainSet3 from "../set-3.json";
+import jsonMainSet4 from "../set-4.json";
 
 export default {
   data() {
     return {
       show: false,
-      WarmUp: jsonWarmUp,
-      MainSet: jsonMainSet,
+      WarmUp1: jsonWarmUp1,
+      WarmUp2: jsonWarmUp2,
+      WarmUp3: jsonWarmUp3,
+      WarmUp4: jsonWarmUp4,
+      MainSet1: jsonMainSet1,
+      MainSet2: jsonMainSet2,
+      MainSet3: jsonMainSet3,
+      MainSet4: jsonMainSet4,
+      randomWU: null,
+      randomSET: null
     };
   },
   methods: {
-    showWorkout() {
-      this.show = !this.show;
-    },
-    randomID() {
-      const randomIndex = Math.floor(Math.random() * jsonWarmUp.wu.length);
-      this.randomId = jsonWarmUp.wu[randomIndex].id;
-    },
-  },
-};
+    randomID(){
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length)
+      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length)
+      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises
+      this.randomSET = jsonMainSet1.set[randomIndex].exercises
+      this.show = !this.show
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -107,6 +125,7 @@ select {
   color: #ffffff;
   background-color: #000000ba;
   outline: none;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:focus {
     background-color: rgba(0, 0, 0, 0.602);

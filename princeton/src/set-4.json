@@ -1,0 +1,30 @@
+{"set":
+[
+{
+    "id": 1,
+    "name": "Beginner Set 3",
+    "exercises": 
+    [
+    "2 50 Freestyle Drill (Catch Up)",
+    "50 Pull, 50 Kick (fast)",
+    "2 100 Freestyle",
+    "4 50 Freestyle (fast on second 25)"
+    ],
+    "level": "beginner",
+    "time": 30
+},
+{
+    "id": 2,
+    "name": "Beginner Set 4",
+    "exercises": 
+    [
+    "2 50 Freestyle Drill (Superman Catch Up)",
+    "50 Pull, 50 Kick (fast)",
+    "4 50 Freestyle",
+    "4 50 Freestyle (fast on second 25)"
+    ],
+    "level": "beginner",
+    "time": 30
+}
+]
+}
