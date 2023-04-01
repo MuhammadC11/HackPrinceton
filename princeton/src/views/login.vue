@@ -76,15 +76,3 @@ export default {
   },
 };
 </script>
-
-<script>
-export default {
-  data() {
-    return {
-      login: "",
-      password: "",
-      test: "",
-    };
-  },
-};
-</script>
