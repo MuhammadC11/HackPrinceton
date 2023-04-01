@@ -1,16 +1,21 @@
 <template>
   <div class="container">
     <div id="login">
-      <input id="email" type="text" ref="email" />
+      <input id="email" type="text" ref="email" v-model="login" />
+
       <br />
-      <input id="password" type="text" ref="password" />
+
+      <input id="password" type="text" ref="password" v-model="password" />
+      <br />
+
+      <button>Register</button>
     </div>
   </div>
 </template>
 
 <style>
 body {
-  background-image: url("../assets/water.jpeg");
+  background-color: rgb(41, 97, 171);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -18,11 +23,11 @@ body {
 }
 
 #login {
-  border: 5px solid;
+  border: 1px solid;
   width: 200px;
   height: 350px;
   font-size: 22px;
-  background-color: brown;
+  background-color: white;
   padding: 30px; /* space between content and the border */
   margin: 10px;
   position: absolute;
@@ -41,35 +46,47 @@ body {
   top: 45%;
   left: 13%;
 }
+
+button {
+  position: relative;
+  top: 50%;
+  left: 30%;
+}
 </style>
 
 <script>
 // the relevant methods
-import { collection, addDoc } from "firebase/firestore"
+import { collection, addDoc } from "firebase/firestore";
 // the firestore instance
-import db from './firebase/init.js'
+import db from "./firebase/init.js";
 
 export default {
   created() {
-    this.createUser()
+    this.createUser();
+  },
+  data() {
+    return {
+      login: "",
+      password: "",
+    };
   },
   methods: {
     async createUser() {
       // 'users' collection reference
-      const colRef = collection(db, 'users')
+      const colRef = collection(db, "users");
       // data to send
       const dataObj = {
-        firstName: 'John',
-        lastName: 'Doe',
-        dob: '1990'
-      }
+        firstName: "John",
+        lastName: "Doe",
+        dob: "1990",
+      };
 
       // create document and return reference to it
-      const docRef = await addDoc(colRef, dataObj)
+      const docRef = await addDoc(colRef, dataObj);
 
       // access auto-generated ID with '.id'
-      console.log('Document was created with ID:', docRef.id)
-    }
-  }
-}
+      console.log("Document was created with ID:", docRef.id);
+    },
+  },
+};
 </script>
