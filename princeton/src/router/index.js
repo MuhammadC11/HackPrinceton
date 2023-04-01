@@ -9,29 +9,28 @@ const router = createRouter({
       name: "login",
       component: () => import("../views/login.vue"),
     },
-    
-    {path: "/Dashboard", name: "Dashboard", component: () => import("../views/Dashboard.vue"),
-    meta: { requiresAuth: true },},
-
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: () => import("../views/dashboard.vue"),
+    },
     {
       path: "/register",
       name: "register",
       component: () => import("../views/Register.vue"),
-    }, 
-    
-    ]});
+    },
+  ],
+});
 
 router.beforeEach((to, from, next) => {
-    if (to.matched.some(record => record.meta.requiresAuth)) {
-     
-      if (getAuth().currentUser) {
-        next()
-      } else {
-        alert("You must be logged in to view this page")
-        next("/login")
-      }
-
-
-      }});
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (getAuth().currentUser) {
+      next();
+    } else {
+      alert("You must be logged in to view this page");
+      next("/login");
+    }
+  }
+});
 
 export default router;

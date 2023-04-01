@@ -1,0 +1,18 @@
+{"wu":
+[
+{
+    "id": 1,
+    "name":"Intermediate Warmup 1",
+    "exercises": ["250 Freestyle", "100 Kick", "100 Pull"],
+    "level": "intermediate",
+    "time": 60
+},
+{
+    "id": 2,
+    "name": "Intermediate Warmup 2",
+    "exercises": ["150 Freestyle", "150 Kick", "150 Pull"],
+    "level": "intermediate",
+    "time": 60
+}
+]
+}
