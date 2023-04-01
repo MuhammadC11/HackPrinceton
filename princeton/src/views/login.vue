@@ -1,16 +1,21 @@
 <template>
   <div class="container">
     <div id="login">
-      <input id="email" type="text" ref="email" />
+      <input id="email" type="text" ref="email" v-model="login" />
+
       <br />
-      <input id="password" type="text" ref="password" />
+
+      <input id="password" type="text" ref="password" v-model="password" />
+      <br />
+
+      <button>Register</button>
     </div>
   </div>
 </template>
 
 <style scoped>
 body {
-  background-image: url("../assets/water.jpeg");
+  background-color: rgb(32, 139, 227);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -18,11 +23,11 @@ body {
 }
 
 #login {
-  border: 5px solid;
+  border: 1px solid;
   width: 200px;
   height: 350px;
   font-size: 22px;
-  background-color: brown;
+  background-color: white;
   padding: 30px; /* space between content and the border */
   margin: 10px;
   position: absolute;
@@ -41,12 +46,21 @@ body {
   top: 45%;
   left: 13%;
 }
+
+button {
+  position: relative;
+  top: 50%;
+  left: 30%;
+}
 </style>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      login: "",
+      password: "",
+    };
   },
 };
 </script>
