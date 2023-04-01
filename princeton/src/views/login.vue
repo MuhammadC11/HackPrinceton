@@ -9,8 +9,8 @@
 </template>
 
 <style>
-.container {
-  background-image: url("./assets/water.jpeg");
+body {
+  background-image: url("../assets/water.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -43,4 +43,10 @@
 }
 </style>
 
-<script></script>
+<script>
+export default {
+  data() {
+    return {};
+  },
+};
+</script>
