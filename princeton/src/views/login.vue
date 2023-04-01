@@ -138,7 +138,7 @@ input {
 }
 
 body {
-  background-color: #0094fe;
+  background-color: #000000;
 }
 .title {
   text-align: center;

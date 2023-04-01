@@ -1,16 +1,11 @@
 <template>
-  <body>
-
-    <div class="container">
-      <h1 class="title">Random Swim Workout Generator</h1>
-
-      <h2 class="survey_input">What do you want to get better at?</h2>
-
-      <select name="race" id="survey_input">
+  <div class="container">
+    <h1 class="title">Random Swim Workout Generator</h1>
+    <h2 class="survey_input">What do you want to get better at?</h2>
+    <select name="race" id="survey_input">
         <option value="blank"></option>
-        
         <option value="50 Freestyle">50 Freestyle</option>
-      </select>
+    </select>
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
 
@@ -33,7 +28,7 @@
 
       </div>
     </div>
-  </body>
+  
 </template>
 
 <script>
@@ -75,9 +70,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 body {
-  background-color: #0094fe;
+ background-color: #0094fe;
 }
 .title {
   text-align: center;
@@ -131,4 +126,5 @@ select {
     background-color: rgba(0, 0, 0, 0.602);
   }
 }
+
 </style>
