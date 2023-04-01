@@ -2,18 +2,13 @@
   <div class="navbar_container">
     <div class="home_button">
       <router-link to="/" aria-label="link to the homepage">
-        <button class="button1">Muhammad Chaudhry</button>
+        <button class="button1">Home</button>
       </router-link>
     </div>
-    <div class="resume_button">
-      <router-link to="/resume" aria-label="link to resume">
-        <button class="button1">Résumé</button>
+    <div class="login-btn">
+      <router-link to="/login">
+        <button class="button1">Login</button>
       </router-link>
-    </div>
-    <div>
-      <a target="_blank" class="gh_button" href="https://github.com/MuhammadC11"
-        >GitHub</a
-      >
     </div>
   </div>
 </template>
@@ -28,7 +23,7 @@
   width: 50%;
   text-align: left;
 }
-.resume_button {
+.profile-btn {
   margin-left: 9rem;
 }
 .gh_button {

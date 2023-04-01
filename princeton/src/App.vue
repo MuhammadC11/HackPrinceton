@@ -5,6 +5,6 @@
 
 <style></style>
 
-<script>
+<script setup>
 import Navbar from "./components/Navbar.vue";
 </script>
