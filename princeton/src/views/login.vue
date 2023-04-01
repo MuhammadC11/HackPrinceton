@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 body {
   background-image: url("../assets/water.jpeg");
   background-repeat: no-repeat;
