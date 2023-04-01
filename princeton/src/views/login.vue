@@ -1,15 +1,28 @@
 <template>
   <div class="container">
-    <div id="login">
+    <form @submit.prevent="callApi()">
       <label id="el"> Email: </label>
-      <input id="email" type="text" ref="email" v-model="login" />
+      <input
+        id="email"
+        type="text"
+        ref="email"
+        v-model="login"
+        placeholder="Enter your email"
+      />
 
       <label id="pl"> Password: </label>
-      <input id="password" type="text" ref="password" v-model="password" />
+      <input
+        id="password"
+        type="text"
+        ref="password"
+        v-model="password"
+        placeholder="Enter your password"
+      />
 
-      <button>Register</button>
-    </div>
+      <button type="submit">Register</button>
+    </form>
   </div>
+
   <p>{{ login }}</p>
 </template>
 
