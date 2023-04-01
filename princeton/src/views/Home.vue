@@ -3,14 +3,6 @@
     <h1 class="title">Random Swim Workout Generator</h1>
 
     <div class="container">
-      <h2 class="survey_input">What level swimmer are you?</h2>
-
-      <select name="level" id="survey_input">
-        <option value="blank"></option>
-        <option value="beginner">beginner</option>
-        <option value="intermediate">intermediate</option>
-      </select>
-
       <h2 class="survey_input">What do you want to get better at?</h2>
 
       <select name="race" id="survey_input">
@@ -31,13 +23,14 @@
 
       <br />
 
-      <button id="generate_btn" v-on:click="showWorkout">Generate</button>
+      <button id="generate_btn" @click="showWorkout, randomID" > Generate </button>
 
       <div v-if="show">
-        <div v-for="set in WarmUp" :key="set.id">
-          <p>{{ set.exercises }}</p>
-        </div>
+
+          <p>  {{ randomID }}</p>
+
       </div>
+
     </div>
   </body>
 </template>
@@ -59,7 +52,11 @@ export default {
     showWorkout() {
       this.show = !this.show;
     },
-  },
+    randomID(){
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp.wu.length)
+      this.randomId = jsonWarmUp.wu[randomIndex].id
+    }
+  }
 };
 </script>
 
