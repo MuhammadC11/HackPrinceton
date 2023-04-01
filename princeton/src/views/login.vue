@@ -15,7 +15,7 @@
 
 <style>
 body {
-  background-color: rgb(41, 97, 171);
+  background-color: rgb(32, 139, 227);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -68,6 +68,7 @@ export default {
     return {
       login: "",
       password: "",
+      test: "",
     };
   },
   methods: {
