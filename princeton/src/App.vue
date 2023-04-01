@@ -1,15 +1,7 @@
-
 <template>
-
-  <view-router/>
-  
+  <router-view />
 </template>
 
+<style></style>
 
-<style>
-
-</style>
-
-<script>
-
-</script>
+<script></script>
