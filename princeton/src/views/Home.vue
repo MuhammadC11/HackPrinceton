@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body ref="vantaRef">
     <div class="container" data-aos="fade-left">
       <h1 class="title">Random Swim Workout Generator</h1>
 
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import WAVES from "vanta/dist/vanta.waves.min";
+import * as THREE from "three";
 import AOS from "aos";
 import jsonWarmUp1 from "../warmup-1.json";
 import jsonWarmUp2 from "../warmup-2.json";
@@ -71,6 +73,22 @@ export default {
   },
   mounted() {
     AOS.init();
+    this.vantaEffect = WAVES({
+      el: this.$refs.vantaRef,
+      THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+    });
+  },
+  beforeDestroy() {
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy();
+    }
   },
 };
 </script>
