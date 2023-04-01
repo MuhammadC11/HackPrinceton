@@ -1,9 +1,13 @@
 <template>
-  <div class="container">
-    <h1 class="title">Random Swim Workout Generator</h1>
-    <h2 class="survey_input">What do you want to get better at?</h2>
-    <select name="race" id="survey_input">
+  <body ref="vantaRef">
+    <div class="container" data-aos="fade-left">
+      <h1 class="title">Random Swim Workout Generator</h1>
+
+      <h2 class="survey_input">What do you want to get better at?</h2>
+
+      <select name="race" id="survey_input">
         <option value="blank"></option>
+
         <option value="50 Freestyle">50 Freestyle</option>
     </select>
 
@@ -17,21 +21,21 @@
 
       <br />
 
-      <button id="generate_btn" @click="randomID" > Generate </button>
+      <button id="generate_btn" @click="randomID">Generate</button>
 
       <div v-if="show">
-
-          <p>  {{ randomWU }} </p>
-          <br>
-          <p>  {{ randomSET }} </p>
-
-
+        <p>{{ randomWU }}</p>
+        <br />
+        <p>{{ randomSET }}</p>
       </div>
     </div>
   
 </template>
 
 <script>
+import WAVES from "vanta/dist/vanta.waves.min";
+import * as THREE from "three";
+import AOS from "aos";
 import jsonWarmUp1 from "../warmup-1.json";
 import jsonWarmUp2 from "../warmup-2.json";
 import jsonWarmUp3 from "../warmup-3.json";
@@ -55,19 +59,44 @@ export default {
       MainSet3: jsonMainSet3,
       MainSet4: jsonMainSet4,
       randomWU: null,
-      randomSET: null
+      randomSET: null,
+      is60: false,
+      is30: false,
     };
   },
   methods: {
-    randomID(){
-      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length)
-      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length)
-      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises
-      this.randomSET = jsonMainSet1.set[randomIndex].exercises
-      this.show = !this.show
+    randomID() {
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length);
+      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length);
+      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises;
+      this.randomSET = jsonMainSet1.set[randomIndex].exercises;
+      this.show = !this.show;
+    },
+  },
+  mounted() {
+    AOS.init();
+    this.vantaEffect = WAVES({
+      el: this.$refs.vantaRef,
+      THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      shininess: 79.0,
+      waveHeight: 17.5,
+      waveSpeed: 1.1,
+      zoom: 1.09,
+    });
+  },
+  beforeDestroy() {
+    if (this.vantaEffect) {
+      this.vantaEffect.destroy();
     }
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>

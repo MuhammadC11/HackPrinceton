@@ -1,7 +1,7 @@
 {"set":
 [
 {
-    "id": 4,
+    "id": 1,
     "name": "Beginner Set 1",
     "exercises": 
     [
@@ -14,7 +14,7 @@
     "time": 60
 },
 {
-    "id": 5,
+    "id": 2,
     "name": "Beginner Set 2",
     "exercises": 
     [
