@@ -22,24 +22,6 @@
           </div>
         </div>
       </div>
-      <div class="workouts-body-right">
-        <div class="workouts-body-right-top">
-          <div class="workouts-body-right-top-left">
-            <h2>Workout 5</h2>
-          </div>
-          <div class="workouts-body-right-top-right">
-            <h2>Workout 6</h2>
-          </div>
-        </div>
-        <div class="workouts-body-right-bottom">
-          <div class="workouts-body-right-bottom-left">
-            <h2>Workout 7</h2>
-          </div>
-          <div class="workouts-body-right-bottom-right">
-            <h2>Workout 8</h2>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -53,12 +35,11 @@ export default {
 <style lang="scss" scoped>
 .workouts {
   color: white;
-  width: 50%;
+  width: 95%;
   margin: auto;
   position: absolute;
   top: 35%;
   left: 2%;
-
   background: #2d2b2b;
   border-radius: 10px;
   overflow: hidden;
@@ -72,13 +53,13 @@ export default {
   font-weight: 600;
 }
 .workouts-body {
-  display: flex;
   padding: 20px;
 }
 .workouts-body-left {
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: 3rem;
 }
 .workouts-body-left-top {
   flex: 1;
