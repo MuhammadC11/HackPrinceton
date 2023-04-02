@@ -1,20 +1,29 @@
 <template>
-    
+
 <div class="container" ref="vantaRef">
 
+<br>
+<br>
+<br>
+
+<h1> Welcome to your Swim Set Workout Generator! </h1>
+
 </div>
+
 
 
 </template>
 
 <style>
 
-.fin{
+h1{
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin: auto;
+  color: white;
+  font-size: 100px;
   
 }
 
