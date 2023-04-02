@@ -1,15 +1,14 @@
 <template>
   <html ref="vantaRef">
     <div class="container" data-aos="fade-left">
-      <p> </p>
+      <p></p>
       <h1 class="title">Random Swim Workout Generator</h1>
 
       <h2 class="survey_input">What do you want to get better at?</h2>
 
       <select name="race" id="survey_input">
         <option value="blank"></option>
-
-        <option value="50 Freestyle">50 Freestyle</option>
+        <option value="optA">50 Freestyle</option>
       </select>
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
@@ -29,12 +28,26 @@
       <div v-if="op2()">
         <button id="generate_btn" @click="randomID2">Generate</button>
       </div>
-
-      <div v-if="show">
-        <p>{{ randomWU }}</p>
-        <br />
-        <p>{{ randomSET }}</p>
+      <!-- indicate that this is only for 50 free somehow -->
+      <div class="generated_wo" v-if="show">
+        <h2>What to focus on</h2>
+        <p>Fast strokes</p>
+        <h2>Warm Up</h2>
+        <ul>
+          <li v-bind:key="exercise" v-for="exercise in randomWU">
+            {{ exercise }}
+          </li>
+        </ul>
+        <h2>Main Set</h2>
+        <ul>
+          <li v-bind:key="exercise" v-for="exercise in randomSET">
+            {{ exercise }}
+          </li>
+        </ul>
       </div>
+      <!-- <p>{{ randomWU }}</p> -->
+      <!-- <br /> -->
+      <!-- <p>{{ randomSET }}</p> -->
     </div>
   </html>
 </template>
@@ -173,6 +186,28 @@ select {
   transition: all 0.2s ease-in-out;
   &:focus {
     background-color: rgba(0, 0, 0, 0.602);
+  }
+}
+
+.generated_wo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   }
 }
 </style>
