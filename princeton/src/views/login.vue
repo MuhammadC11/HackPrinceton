@@ -22,16 +22,15 @@
           v-model="password"
           placeholder="Enter your password"
         />
-        <button type="submit" class="submit-btn" aria-label="Submit.">
-          Submit
-        </button>
+        <p> </p>
+        <button type="submit" class="submit-btn" aria-label="Submit.">Submit</button>
         <p v-if="errorMsg">{{ errorMsg }}</p>
       </div>
-
-      <h5>Don't have an account?</h5>
-      <div class="register-btn">
+      <p>Don't have an account?</p>
+      <div class="register-btn-container">
         <router-link to="/register">
-          <button class="button1">Register</button>
+          <button class="register-btn">Register</button>
+          <p> </p>
         </router-link>
       </div>
     </form>
@@ -145,6 +144,23 @@ input {
   margin-top: 1rem;
 }
 
+.register-btn {
+  text-align: center;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0000006a;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.602);
+  }
+  margin-top: 1rem;
+  cursor: pointer;
+}
 body {
   background-color: #000000;
 }
