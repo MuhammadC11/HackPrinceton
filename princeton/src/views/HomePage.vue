@@ -8,6 +8,14 @@
 
 <h1> Welcome to your Swim Set Workout Generator! </h1>
 
+<h2> </h2>
+
+<br>
+
+<router-link to="/home" id = "button">
+    <button> To The Generator </button>
+</router-link>
+
 </div>
 
 
@@ -17,6 +25,7 @@
 <style>
 
 h1{
+
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -24,9 +33,15 @@ h1{
   margin: auto;
   color: white;
   font-size: 100px;
+  text-align: center;
   
 }
 
+#button{
+    left: 45%;
+    width: 300px;
+    height: 25px;
+}
 </style>
 
 <script>

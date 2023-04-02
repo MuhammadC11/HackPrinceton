@@ -3,11 +3,11 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", name: "home", component: () => import("../views/Home.vue") },
+    { path: "/", name: "homePage", component: () => import("../views/HomePage.vue") },
     {
       path: "/login",
       name: "login",
-      component: () => import("../views/login.vue"),
+      component: () => import("../views/login.vue")
     },
     {
       path: "/dashboard",
@@ -32,9 +32,9 @@ const router = createRouter({
       meta: { requiresAuth: true },
     },
     {
-      path: "/homepage",
-      name: "homepage",
-      component: () => import("../views/HomePage.vue"),
+      path: "/home",
+      name: "home",
+      component: () => import("../views/Home.vue"),
       meta: { requiresAuth: true },
     },
   ],
