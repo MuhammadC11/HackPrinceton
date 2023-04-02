@@ -33,7 +33,7 @@
         <router-link to="/register">
           <button class="register-btn" aria-label="Register.">Register</button>
         </router-link>
-        <p> </p>
+        <p></p>
       </div>
     </form>
   </div>
@@ -55,7 +55,7 @@ const login = () => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      router.push("/dashboard");
+      router.push("/");
       // ...
     })
     .catch((error) => {
