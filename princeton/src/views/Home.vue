@@ -8,8 +8,7 @@
 
       <select name="race" id="survey_input">
         <option value="blank"></option>
-
-        <option value="50 Freestyle">50 Freestyle</option>
+        <option value="optA">50 Freestyle</option>
       </select>
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
@@ -29,13 +28,23 @@
       <div v-if="op2()">
         <button id="generate_btn" @click="randomID2">Generate</button>
       </div>
-
+      <!-- indicate that this is only for 50 free somehow -->
       <div v-if="show">
-        <p>{{ randomWU }}</p>
-        <br />
-        <p>{{ randomSET }}</p>
+        <h2>What to focus on</h2>
+        <p>Fast strokes</p>
+        <h2>Warm Up</h2>
+        <ul>
+          <li v-bind:key="exercise" v-for="exercise in randomWU">{{ exercise }}</li>
+        </ul>
+        <h2>Main Set</h2>
+        <ul>
+          <li v-bind:key="exercise" v-for="exercise in randomSET">{{ exercise }}</li>
+        </ul>
       </div>
-    </div>
+         <!-- <p>{{ randomWU }}</p> -->
+        <!-- <br /> -->
+        <!-- <p>{{ randomSET }}</p> -->
+      </div>
   </html>
 </template>
 
