@@ -2,16 +2,10 @@
   <div class="profile-card">
     <div class="profile-header">{{ user.name }}</div>
     <div class="profile-body">
-      <div class="profile-body-left">
-        <img
-          src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-          alt="profile"
-        />
-      </div>
+      <div class="profile-body-left"></div>
       <div class="profile-body-right">
         <div class="profile-body-right-top">
           <div class="profile-body-right-top-left">
-            <h3>{{ user.name }}</h3>
             <p>{{ user.email }}</p>
           </div>
         </div>
