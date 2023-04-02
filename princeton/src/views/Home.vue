@@ -33,7 +33,7 @@
       <div class="generated_wo" v-if="show">
         <button class="pdf-btn" type="button" @click="generatePDF(randomWU,randomSET)">Generate PDF</button>
         <h2>What to focus on</h2>
-        <p>Fast strokes</p>
+        <p class="describe">When swimming, be mindful to try to breathe as little as possible during sprints,explode off starts and turns, while keeping good form.</p>
         <h2>Warm Up</h2>
         <ul>
           <li v-bind:key="exercise" v-for="exercise in randomWU">
@@ -58,6 +58,9 @@
 import WAVES from "vanta/dist/vanta.waves.min";
 import * as THREE from "three";
 import AOS from "aos";
+
+import jsonDescriptions from "../descriptions.json";
+
 import jsonWarmUp1 from "../warmup-1.json";
 import jsonWarmUp2 from "../warmup-2.json";
 import jsonWarmUp3 from "../warmup-3.json";
@@ -74,6 +77,7 @@ export default {
   data() {
     return {
       show: false,
+      Descriptions: jsonDescriptions,
       WarmUp1: jsonWarmUp1,
       WarmUp2: jsonWarmUp2,
       WarmUp3: jsonWarmUp3,
@@ -82,6 +86,7 @@ export default {
       MainSet2: jsonMainSet2,
       MainSet3: jsonMainSet3,
       MainSet4: jsonMainSet4,
+      notrandomD: null,
       randomWU: null,
       randomSET: null,
       //randomWUSET: randomWU+randomSET,
@@ -89,7 +94,7 @@ export default {
     };
   },
   methods: {
-    randomID2() {
+    randomID2() { 
       const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length);
       const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length);
       this.randomWU = jsonWarmUp1.wu[randomIndex].exercises;
@@ -219,6 +224,13 @@ select {
   }
 }
 
+.describe{
+  text-align: center;
+  font-size: 1.5rem;
+  width: 75%;
+  color: black;
+  font-family: "Quicksand", sans-serif;
+}
 
 #generate_btn {
   text-align: center;
