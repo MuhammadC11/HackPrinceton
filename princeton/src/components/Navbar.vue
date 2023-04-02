@@ -7,7 +7,7 @@
     </div>
 
     <div class="login-btn">
-      <router-link to="/login">
+      <router-link v-if="!isLoggedIn" to="/login">
         <button class="button1">Login</button>
       </router-link>
     </div>
