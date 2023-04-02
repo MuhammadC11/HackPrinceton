@@ -17,16 +17,16 @@
           v-model="password"
           placeholder="Enter your password"
         />
-        <button type="submit" class="submit-btn" aria-label="Submit.">
+        <button class="submit-btn" type="submit" aria-label="Submit.">
           Submit
         </button>
         <p v-if="errorMsg">{{ errorMsg }}</p>
       </div>
 
       <h5>Already have an account?</h5>
-      <div class="login-btn">
+      <div id="login_button">
         <router-link to="/login">
-          <button class="button1">Login</button>
+          <button class="login-btn">Login</button>
         </router-link>
       </div>
     </form>
@@ -119,7 +119,27 @@ input {
     background-color: rgba(0, 0, 0, 0.602);
   }
   margin-top: 1rem;
+  cursor: pointer;
 }
+
+.login-btn {
+  text-align: center;
+  width: 8rem;
+  height: 2rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0000006a;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.602);
+  }
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
 
 body {
   background-color: #0094fe;

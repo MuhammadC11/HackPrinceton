@@ -19,7 +19,7 @@
 
       <br />
       <!--generates workout-->
-      <!-- 1 Intermediate 60 -->\
+      <!-- 1 Intermediate 60 -->
       <!-- 2 Intermediate 30 -->
       <!-- 3 Beginner 60 -->
       <!-- 4 Beginner 30 -->
