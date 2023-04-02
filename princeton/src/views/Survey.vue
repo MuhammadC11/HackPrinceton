@@ -9,6 +9,7 @@
 <input  
 id = "lev_input" 
 v-model = "level"
+type = "text"
 placeholder = "Enter here:"
 /> 
 
