@@ -1,7 +1,7 @@
 <template>
   <html ref="vantaRef">
     <div class="container" data-aos="fade-left">
-      <p> </p>
+      <p></p>
       <h1 class="title">Random Swim Workout Generator</h1>
 
       <h2 class="survey_input">What do you want to get better at?</h2>
@@ -34,17 +34,21 @@
         <p>Fast strokes</p>
         <h2>Warm Up</h2>
         <ul>
-          <li v-bind:key="exercise" v-for="exercise in randomWU">{{ exercise }}</li>
+          <li v-bind:key="exercise" v-for="exercise in randomWU">
+            {{ exercise }}
+          </li>
         </ul>
         <h2>Main Set</h2>
         <ul>
-          <li v-bind:key="exercise" v-for="exercise in randomSET">{{ exercise }}</li>
+          <li v-bind:key="exercise" v-for="exercise in randomSET">
+            {{ exercise }}
+          </li>
         </ul>
       </div>
-         <!-- <p>{{ randomWU }}</p> -->
-        <!-- <br /> -->
-        <!-- <p>{{ randomSET }}</p> -->
-      </div>
+      <!-- <p>{{ randomWU }}</p> -->
+      <!-- <br /> -->
+      <!-- <p>{{ randomSET }}</p> -->
+    </div>
   </html>
 </template>
 
@@ -182,6 +186,28 @@ select {
   transition: all 0.2s ease-in-out;
   &:focus {
     background-color: rgba(0, 0, 0, 0.602);
+  }
+}
+
+.generated_wo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   }
 }
 </style>
