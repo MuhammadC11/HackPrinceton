@@ -1,6 +1,6 @@
 # HackPrinceton
 
-##How to run our code
+# How to run our code
 
 1. cd princeton
 
