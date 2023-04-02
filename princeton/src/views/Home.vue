@@ -10,6 +10,7 @@
 
         <option value="blank"> </option>
         <option value="optFree"> 50 Freestyle </option>
+        <option value="optFreeDist"> 200 Freestyle </option>
 
       </select>
 
@@ -18,7 +19,7 @@
       <h2 class="survey_input">How much time do you have to swim?</h2>
 
       </div>
-      
+
       <div v-if="opFree()">
 
       <select name="time" id="survey_input" v-model="selected">
