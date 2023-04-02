@@ -25,6 +25,12 @@ const router = createRouter({
       component: () => import("../views/Dashboard.vue"),
       meta: { requiresAuth: true },
     },
+    {
+      path: "/survey",
+      name: "survey",
+      component: () => import("../views/Survey.vue"),
+      meta: { requiresAuth: true },
+    },
   ],
 });
 
