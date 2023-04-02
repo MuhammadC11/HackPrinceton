@@ -19,6 +19,12 @@
         </button>
       </router-link>
     </div>
+
+    <div class="profile-btn">
+      <router-link v-if="isLoggedIn" to="/dashboard">
+        <button class="button1">Dashboard</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -57,9 +63,11 @@ const handleSignOut = () => {
 
 .home_button {
   margin-left: 30px;
-  margin-right: 30px;
+  margin-right: 55rem;
 }
 .login-btn {
+  margin-left: 30px;
+  margin-right: 30px;
 }
 .gh_button {
   border: none;
