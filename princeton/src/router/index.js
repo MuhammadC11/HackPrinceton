@@ -31,6 +31,12 @@ const router = createRouter({
       component: () => import("../views/Survey.vue"),
       meta: { requiresAuth: true },
     },
+    {
+      path: "/homepage",
+      name: "homepage",
+      component: () => import("../views/HomePage.vue"),
+      meta: { requiresAuth: true },
+    },
   ],
 });
 
