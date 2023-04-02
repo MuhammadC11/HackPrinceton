@@ -29,9 +29,9 @@
       <p>Don't have an account?</p>
       <div class="register-btn-container">
         <router-link to="/register">
-          <button class="register-btn">Register</button>
-          <p> </p>
+          <button type="submit" class="register-btn" aria-label="Register.">Register</button>
         </router-link>
+        <p> </p>
       </div>
     </form>
   </div>
@@ -142,6 +142,7 @@ input {
     background-color: rgba(0, 0, 0, 0.602);
   }
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .register-btn {
@@ -161,6 +162,7 @@ input {
   margin-top: 1rem;
   cursor: pointer;
 }
+
 body {
   background-color: #000000;
 }

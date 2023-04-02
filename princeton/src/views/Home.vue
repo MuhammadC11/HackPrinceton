@@ -1,6 +1,7 @@
 <template>
   <html ref="vantaRef">
     <div class="container" data-aos="fade-left">
+      <p> </p>
       <h1 class="title">Random Swim Workout Generator</h1>
 
       <h2 class="survey_input">What do you want to get better at?</h2>
