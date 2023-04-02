@@ -2,6 +2,7 @@
   <html ref="vantaRef">
     <div class="container" data-aos="fade-left">
       <p></p>
+      
       <h1 class="title">Random Swim Workout Generator</h1>
 
       <h2 class="survey_input">What do you want to get better at?</h2>
@@ -30,6 +31,7 @@
       </div>
       <!-- indicate that this is only for 50 free somehow -->
       <div class="generated_wo" v-if="show">
+        <button class="pdf-btn" type="button" @click="generatePDF(randomWU,randomSET)">Generate PDF</button>
         <h2>What to focus on</h2>
         <p>Fast strokes</p>
         <h2>Warm Up</h2>
@@ -66,6 +68,8 @@ import jsonMainSet2 from "../set-2.json";
 import jsonMainSet3 from "../set-3.json";
 import jsonMainSet4 from "../set-4.json";
 
+import jsPDF from 'jspdf';
+
 export default {
   data() {
     return {
@@ -80,6 +84,7 @@ export default {
       MainSet4: jsonMainSet4,
       randomWU: null,
       randomSET: null,
+      //randomWUSET: randomWU+randomSET,
       selected: null,
     };
   },
@@ -98,12 +103,54 @@ export default {
       this.randomSET = jsonMainSet2.set[randomIndex].exercises;
       this.show = !this.show;
     },
+    concatenateWUSET() {
+      return this.randomWU + this.randomSET;
+    },
+    generatePDF(wu, set) {
+      const doc = new jsPDF();
+      //doc.text(20,30,"What to Focus On")
+      //doc.text(10,10,tips);
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+
+      // Add "Warm Up" heading
+      doc.text('Warm Up', doc.internal.pageSize.getWidth() / 2, 20, {
+        align: 'center',
+      });
+
+      // Reset font size and family
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'normal');
+
+      // Add warm-up exercises
+      const splitWU = doc.splitTextToSize(wu, doc.internal.pageSize.getWidth() - 40);
+      doc.text(wu, 20, 30);
+
+      // Set font size and family
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+
+      // Add "Main Set" heading
+      doc.text('Main Set', doc.internal.pageSize.getWidth() / 2, 70, {align:
+         'center',
+        });
+
+      // Reset font size and family
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'normal');
+
+      // Add main set exercises
+      const splitSet = doc.splitTextToSize(set, doc.internal.pageSize.getWidth() - 40);
+      doc.text(set, 20, 80);
+      doc.save("mySwimWorkout.pdf");
+    },
     op1() {
       return this.selected === "opt1";
     },
     op2() {
       return this.selected === "opt2";
     },
+  
   },
   mounted() {
     AOS.init();
@@ -159,7 +206,7 @@ body {
 select {
   text-align: center;
   width: 20rem;
-  height: 4rem;
+  height: 3rem;
   border: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -172,6 +219,7 @@ select {
   }
 }
 
+
 #generate_btn {
   text-align: center;
   width: 20rem;
@@ -183,12 +231,30 @@ select {
   background-color: #000000ba;
   outline: none;
   cursor: pointer;
+  border-radius: 10px;
   transition: all 0.2s ease-in-out;
   &:focus {
     background-color: rgba(0, 0, 0, 0.602);
   }
 }
-
+.pdf-btn {
+  text-align: center;
+  border-radius: 10px;
+  width: 8rem;
+  height: 4rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #0000006a;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.602);
+  }
+  margin-top: 1rem;
+  cursor: pointer;
+}
 .generated_wo {
   display: flex;
   flex-direction: column;
@@ -200,7 +266,7 @@ select {
   color: #000000;
   font-family: "Quicksand", sans-serif;
   font-size: 1.5rem;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
