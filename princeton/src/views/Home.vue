@@ -206,6 +206,7 @@ body {
   color: #ffffff;
   font-family: "Quicksand", sans-serif;
   margin: auto;
+  position: center;
 }
 .container {
   display: flex;
