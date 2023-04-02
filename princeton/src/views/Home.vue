@@ -1,7 +1,6 @@
 <template>
   <html ref="vantaRef">
     <div class="container" data-aos="fade-left">
-      <p></p>
       
       <h1 class="title">Random Swim Workout Generator</h1>
 
@@ -14,10 +13,14 @@
 
       </select>
 
-      <div v-if="opFree()" id = "move">
+      <div v-if="opFree()">
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
-    
+
+      </div>
+      
+      <div v-if="opFree()">
+
       <select name="time" id="survey_input" v-model="selected">
 
         <option value="blank"></option>
@@ -212,6 +215,7 @@ body {
   font-family: "Quicksand", sans-serif;
   margin: auto;
   position: center;
+  
 }
 .container {
   display: flex;
