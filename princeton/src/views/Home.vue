@@ -1,39 +1,29 @@
 <template>
   <html ref="vantaRef">
     <div class="container" data-aos="fade-left">
-      
       <h1 class="title">Random Swim Workout Generator</h1>
 
       <h2 class="survey_input">What do you want to get better at?</h2>
 
       <select name="race" id="survey_input" v-model="WorkOn">
-
-        <option value="blank"> </option>
-        <option value="optFree"> 50 Freestyle </option>
-        <option value="optFreeDist"> 200 Freestyle </option>
-
-      </select>
-
-      <div v-if="opFree()">
-
-      <h2 class="survey_input">How much time do you have to swim?</h2>
-
-      </div>
-
-      <div v-if="opFree()">
-
-      <select name="time" id="survey_input" v-model="selected">
-
         <option value="blank"></option>
-        <option value="opt1">30 minutes</option>
-        <option value="opt2">60 minutes</option>
-
+        <option value="optFree">50 Freestyle</option>
       </select>
 
+      <div v-if="opFree()">
+        <h2 class="survey_input">How much time do you have to swim?</h2>
       </div>
-      
-      <br>
-     
+
+      <div v-if="opFree()">
+        <select name="time" id="survey_input" v-model="selected">
+          <option value="blank"></option>
+          <option value="opt1">30 minutes</option>
+          <option value="opt2">60 minutes</option>
+        </select>
+      </div>
+
+      <br />
+
       <div v-if="op1()">
         <button id="generate_btn" @click="randomID1">Generate</button>
       </div>
@@ -43,9 +33,18 @@
       </div>
       <!-- indicate that this is only for 50 free somehow -->
       <div class="generated_wo" v-if="show">
-        <button class="pdf-btn" type="button" @click="generatePDF(randomWU,randomSET)">Generate PDF</button>
+        <button
+          class="pdf-btn"
+          type="button"
+          @click="generatePDF(randomWU, randomSET)"
+        >
+          Generate PDF
+        </button>
         <h2>What to focus on</h2>
-        <p class="describe">When swimming, be mindful to try to breathe as little as possible during sprints,explode off starts and turns, while keeping good form.</p>
+        <p class="describe">
+          When swimming, be mindful to try to breathe as little as possible
+          during sprints,explode off starts and turns, while keeping good form.
+        </p>
         <h2>Warm Up</h2>
         <ul>
           <li v-bind:key="exercise" v-for="exercise in randomWU">
@@ -83,7 +82,7 @@ import jsonMainSet2 from "../set-2.json";
 import jsonMainSet3 from "../set-3.json";
 import jsonMainSet4 from "../set-4.json";
 
-import jsPDF from 'jspdf';
+import jsPDF from "jspdf";
 
 export default {
   data() {
@@ -103,11 +102,11 @@ export default {
       randomSET: null,
       //randomWUSET: randomWU+randomSET,
       selected: null,
-      WorkOn: null
+      WorkOn: null,
     };
   },
   methods: {
-    randomID2() { 
+    randomID2() {
       const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length);
       const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length);
       this.randomWU = jsonWarmUp1.wu[randomIndex].exercises;
@@ -129,36 +128,42 @@ export default {
       //doc.text(20,30,"What to Focus On")
       //doc.text(10,10,tips);
       doc.setFontSize(20);
-      doc.setFont('helvetica', 'bold');
+      doc.setFont("helvetica", "bold");
 
       // Add "Warm Up" heading
-      doc.text('Warm Up', doc.internal.pageSize.getWidth() / 2, 20, {
-        align: 'center',
+      doc.text("Warm Up", doc.internal.pageSize.getWidth() / 2, 20, {
+        align: "center",
       });
 
       // Reset font size and family
       doc.setFontSize(12);
-      doc.setFont('helvetica', 'normal');
+      doc.setFont("helvetica", "normal");
 
       // Add warm-up exercises
-      const splitWU = doc.splitTextToSize(wu, doc.internal.pageSize.getWidth() - 40);
+      const splitWU = doc.splitTextToSize(
+        wu,
+        doc.internal.pageSize.getWidth() - 40
+      );
       doc.text(wu, 20, 30);
 
       // Set font size and family
       doc.setFontSize(20);
-      doc.setFont('helvetica', 'bold');
+      doc.setFont("helvetica", "bold");
 
       // Add "Main Set" heading
-      doc.text('Main Set', doc.internal.pageSize.getWidth() / 2, 70, {align:
-         'center',
-        });
+      doc.text("Main Set", doc.internal.pageSize.getWidth() / 2, 70, {
+        align: "center",
+      });
 
       // Reset font size and family
       doc.setFontSize(12);
-      doc.setFont('helvetica', 'normal');
+      doc.setFont("helvetica", "normal");
 
       // Add main set exercises
-      const splitSet = doc.splitTextToSize(set, doc.internal.pageSize.getWidth() - 40);
+      const splitSet = doc.splitTextToSize(
+        set,
+        doc.internal.pageSize.getWidth() - 40
+      );
       doc.text(set, 20, 80);
       doc.save("mySwimWorkout.pdf");
     },
@@ -169,9 +174,9 @@ export default {
       return this.selected === "opt2";
     },
 
-    opFree(){
+    opFree() {
       return this.WorkOn === "optFree";
-    }
+    },
   },
   mounted() {
     AOS.init();
@@ -216,7 +221,6 @@ body {
   font-family: "Quicksand", sans-serif;
   margin: auto;
   position: center;
-  
 }
 .container {
   display: flex;
@@ -242,7 +246,7 @@ select {
   }
 }
 
-.describe{
+.describe {
   text-align: center;
   font-size: 1.5rem;
   width: 75%;
@@ -301,11 +305,10 @@ select {
   border-radius: 1rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin: 2rem;
+  margin-bottom: 0;
   transition: all 0.2s ease-in-out;
   &:hover {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   }
-
-
 }
 </style>
