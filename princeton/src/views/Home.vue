@@ -6,21 +6,29 @@
 
       <h2 class="survey_input">What do you want to get better at?</h2>
 
-      <select name="race" id="survey_input">
-        <option value="blank"></option>
-        <option value="optA">50 Freestyle</option>
+      <select name="race" id="survey_input" v-model="WorkOn">
+
+        <option value="blank"> </option>
+        <option value="optFree"> 50 Freestyle </option>
+
       </select>
 
-      <h2 class="survey_input">How much time do you have to swim?</h2>
+      <div v-if="opFree()" id = "move">
 
+      <h2 class="survey_input">How much time do you have to swim?</h2>
+    
       <select name="time" id="survey_input" v-model="selected">
+
         <option value="blank"></option>
         <option value="opt1">30 minutes</option>
         <option value="opt2">60 minutes</option>
+
       </select>
 
-      <br />
-
+      </div>
+      
+      <br>
+     
       <div v-if="op1()">
         <button id="generate_btn" @click="randomID1">Generate</button>
       </div>
@@ -81,6 +89,7 @@ export default {
       randomWU: null,
       randomSET: null,
       selected: null,
+      WorkOn: null
     };
   },
   methods: {
@@ -104,6 +113,9 @@ export default {
     op2() {
       return this.selected === "opt2";
     },
+    opFree(){
+      return this.WorkOn === "optFree";
+    }
   },
   mounted() {
     AOS.init();
@@ -209,5 +221,7 @@ select {
   &:hover {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   }
+
+
 }
 </style>
