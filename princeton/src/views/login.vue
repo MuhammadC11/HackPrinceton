@@ -22,8 +22,10 @@
           v-model="password"
           placeholder="Enter your password"
         />
-        <p> </p>
-        <button type="submit" class="submit-btn" aria-label="Submit.">Submit</button>
+        <p></p>
+        <button type="submit" class="submit-btn" aria-label="Submit.">
+          Submit
+        </button>
         <p v-if="errorMsg">{{ errorMsg }}</p>
       </div>
       <p>Don't have an account?</p>

@@ -97,9 +97,9 @@ export default {
     this.vantaEffect = WAVES({
       el: this.$refs.vantaRef,
       THREE,
-      mouseControls: false,
-      touchControls: false,
-      gyroControls: false,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: true,
       minHeight: 800.0,
       minWidth: 110.0,
       scale: 1.0,
