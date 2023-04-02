@@ -30,7 +30,7 @@ h1{
     color:white;
 }
 
-button{
+input{
     text-align: center;
     width: 20rem;
     height: 4rem;
