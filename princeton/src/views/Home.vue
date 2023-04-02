@@ -9,9 +9,9 @@
 
       <select name="race" id="survey_input" v-model="WorkOn">
         <option value="blank"></option>
-        <option value="optFree">Recreational Lap Swimming</option>
+        <option value="optRec">Recreational Lap Swimming</option>
         <option value="optFree">50 Yard Freestyle</option>
-        <option value="optFree">200 Yard Freestyle</option>
+        <option value="optFree2">200 Yard Freestyle</option>
       </select>
 
       <div v-if="opFree()" id="move">
@@ -26,6 +26,18 @@
       </div>
 
       <br />
+
+      <div v-if="opRec()">
+        <h2 class="survey_input">How much time do you have to swim?</h2>
+      </div>
+
+      <div v-if="opRec()">
+        <select name="time" id="survey_input" v-model="selected">
+          <option value="blank"></option>
+          <option value="opt1">30 minutes</option>
+          <option value="opt2">60 minutes</option>
+        </select>
+      </div>
 
       <div v-if="op1()">
         <button id="generate_btn" @click="randomID1">Generate</button>
@@ -180,7 +192,11 @@ export default {
     opFree() {
       return this.WorkOn === "optFree";
     },
+    opRec() {
+      return this.WorkOn === "optRec";
+    },
   },
+
   mounted() {
     AOS.init();
     this.vantaEffect = WAVES({
