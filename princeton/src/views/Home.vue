@@ -1,34 +1,44 @@
 <template>
   <body ref="vantaRef">
     <div class="container" data-aos="fade-left">
-      <h1> </h1>
       <h1 class="title">Random Swim Workout Generator</h1>
+
       <h2 class="survey_input">What do you want to get better at?</h2>
+
       <select name="race" id="survey_input">
         <option value="blank"></option>
+
         <option value="50 Freestyle">50 Freestyle</option>
-    </select>
+      </select>
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
 
-      <select name="time" id="survey_input">
+      <select name="time" id="survey_input" v-model = "selected">
         <option value="blank"></option>
-        <option value="30 minutes">30 minutes</option>
-        <option value="60 minutes">60 minutes</option>
+        <option value="opt1" > 30 minutes </option>
+        <option value="opt2" > 60 minutes </option>
       </select>
 
       <br />
-      <!--generates workout-->
-      <!-- 1 Intermediate 60 -->\
-      <!-- 2 Intermediate 30 -->
-      <!-- 3 Beginner 60 -->
-      <!-- 4 Beginner 30 -->
+
+      <div v-if="op1()">
+
+      <button id="generate_btn" @click="randomID1" > Generate </button>
+
+      </div>
+
+      <div v-if="op2()">
       
-      <button id="generate_btn" @click="randomID">Generate</button>
+      <button id="generate_btn" @click="randomID2" > Generate </button>
+      
+      </div>
+
       <div v-if="show">
-        <p>{{ randomWU }}</p>
-        <br />
-        <p>{{ randomSET }}</p>
+
+          <p>  {{ randomWU }} </p>
+          <br>
+          <p>  {{ randomSET }} </p>
+
       </div>
 
     </div>
@@ -63,17 +73,30 @@ export default {
       MainSet4: jsonMainSet4,
       randomWU: null,
       randomSET: null,
-      is60: false,
-      is30: false,
+      selected: null
+  
     };
   },
   methods: {
-    randomID() {
-      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length);
-      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length);
-      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises;
-      this.randomSET = jsonMainSet1.set[randomIndex].exercises;
-      this.show = !this.show;
+    randomID2(){
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length)
+      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length)
+      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises
+      this.randomSET = jsonMainSet1.set[randomIndex].exercises
+      this.show = !this.show
+    },
+    randomID1(){
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp2.wu.length)
+      const randomIndex1 = Math.floor(Math.random() * jsonMainSet2.set.length)
+      this.randomWU = jsonWarmUp2.wu[randomIndex].exercises
+      this.randomSET = jsonMainSet2.set[randomIndex].exercises
+      this.show = !this.show
+    },
+    op1(){
+      return this.selected === 'opt1'
+    },
+    op2(){
+      return this.selected === 'opt2'
     },
   },
   mounted() {
