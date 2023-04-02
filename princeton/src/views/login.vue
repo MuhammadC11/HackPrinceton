@@ -116,7 +116,7 @@ const login = () => {
 input {
   text-align: center;
   width: 20rem;
-  height: 4rem;
+  height: 3rem;
   border: none;
   font-size: 1.5rem;
   font-weight: 500;
@@ -135,6 +135,7 @@ input {
   height: 3rem;
   border: none;
   font-size: 1.5rem;
+  border-radius: 10px;
   font-weight: 500;
   color: #ffffff;
   background-color: #0000006a;
@@ -152,6 +153,7 @@ input {
   width: 8rem;
   height: 2rem;
   border: none;
+  border-radius: 10px;
   font-size: 1.2rem;
   font-weight: 500;
   color: #ffffff;

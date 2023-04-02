@@ -97,7 +97,7 @@ const register = () => {
 input {
   text-align: center;
   width: 20rem;
-  height: 4rem;
+  height: 3rem;
   border: none;
   font-size: 1.5rem;
   font-weight: 500;
@@ -117,6 +117,7 @@ input {
   border: none;
   font-size: 1.5rem;
   font-weight: 500;
+  border-radius: 10px;
   color: #ffffff;
   background-color: #0000006a;
   outline: none;
@@ -132,6 +133,7 @@ input {
   text-align: center;
   width: 8rem;
   height: 2rem;
+  border-radius: 10px;
   border: none;
   font-size: 1.2rem;
   font-weight: 500;
