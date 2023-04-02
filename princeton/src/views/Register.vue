@@ -1,6 +1,11 @@
 <template>
   <div>
-    <form id="signup" class="login_container" data-aos="fade-left" @submit.prevent="register()">
+    <form
+      id="signup"
+      class="login_container"
+      data-aos="fade-left"
+      @submit.prevent="register()"
+    >
       <div class="inputs">
         <h1>Create an account</h1>
         <label id="el"> Email: </label>
@@ -92,7 +97,7 @@ const register = () => {
 input {
   text-align: center;
   width: 20rem;
-  height: 4rem;
+  height: 3rem;
   border: none;
   font-size: 1.5rem;
   font-weight: 500;
@@ -112,6 +117,7 @@ input {
   border: none;
   font-size: 1.5rem;
   font-weight: 500;
+  border-radius: 10px;
   color: #ffffff;
   background-color: #0000006a;
   outline: none;
@@ -127,6 +133,7 @@ input {
   text-align: center;
   width: 8rem;
   height: 2rem;
+  border-radius: 10px;
   border: none;
   font-size: 1.2rem;
   font-weight: 500;
@@ -140,7 +147,6 @@ input {
   margin-top: 1rem;
   cursor: pointer;
 }
-
 
 body {
   background-color: #0094fe;
