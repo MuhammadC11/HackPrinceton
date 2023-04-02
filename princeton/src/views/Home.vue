@@ -29,7 +29,7 @@
         <button id="generate_btn" @click="randomID2">Generate</button>
       </div>
       <!-- indicate that this is only for 50 free somehow -->
-      <div v-if="show">
+      <div class="generated_wo" v-if="show">
         <h2>What to focus on</h2>
         <p>Fast strokes</p>
         <h2>Warm Up</h2>
