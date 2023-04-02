@@ -3,17 +3,17 @@ import { createRouter, createWebHistory } from "vue-router";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: "/", name: "homePage", component: () => import("../views/HomePage.vue") },
+    {
+      path: "/",
+      name: "homePage",
+      component: () => import("../views/HomePage.vue"),
+    },
     {
       path: "/login",
       name: "login",
-      component: () => import("../views/login.vue")
+      component: () => import("../views/login.vue"),
     },
-    {
-      path: "/dashboard",
-      name: "dashboard",
-      component: () => import("../views/dashboard.vue"),
-    },
+
     {
       path: "/register",
       name: "register",
