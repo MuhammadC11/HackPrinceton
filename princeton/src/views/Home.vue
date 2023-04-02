@@ -1,5 +1,7 @@
-<template>
-  <body ref="vantaRef">
+<template ref="vantaRef">
+  <html ref="vantaRef">
+  <body>
+  </body>
     <div class="container" data-aos="fade-left">
       <h1 class="title">Random Swim Workout Generator</h1>
 
@@ -40,9 +42,8 @@
           <p>  {{ randomSET }} </p>
 
       </div>
-
     </div>
-  </body>
+  </html>
 </template>
 
 <script>
@@ -104,16 +105,16 @@ export default {
     this.vantaEffect = WAVES({
       el: this.$refs.vantaRef,
       THREE,
-      mouseControls: true,
-      touchControls: true,
+      mouseControls: false,
+      touchControls: false,
       gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
+      minHeight: 800.0,
+      minWidth: 110.0,
       scale: 1.0,
       scaleMobile: 1.0,
       shininess: 79.0,
       waveHeight: 17.5,
-      waveSpeed: 1.1,
+      waveSpeed: 1.5,
       zoom: 1.09,
     });
   },
