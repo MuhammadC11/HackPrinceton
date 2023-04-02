@@ -2,8 +2,8 @@
 
 ##How to run our code
 
-cd princeton, 
+1. cd princeton
 
-npm i, 
+2. npm i
 
-npm run dev
+3. npm run dev
