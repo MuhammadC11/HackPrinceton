@@ -10,7 +10,9 @@
       <select name="race" id="survey_input" v-model="WorkOn">
 
         <option value="blank"> </option>
-        <option value="optFree"> 50 Freestyle </option>
+        <option value="optFree"> Recreational Lap Swimming </option>
+        <option value="optFree"> 50 Yard Freestyle </option>
+        <option value="optFree"> 200 Yard Freestyle </option>
 
       </select>
 
