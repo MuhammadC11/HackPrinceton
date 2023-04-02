@@ -31,7 +31,7 @@
       <p>Don't have an account?</p>
       <div class="register-btn-container">
         <router-link to="/register">
-          <button type="submit" class="register-btn" aria-label="Register.">Register</button>
+          <button class="register-btn" aria-label="Register.">Register</button>
         </router-link>
         <p> </p>
       </div>
