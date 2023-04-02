@@ -1,17 +1,16 @@
 <template>
-    <h1> Signed in sucessfully </h1>
+  <div>
+    <ProfileCard />
+  </div>
 </template>
-<script>
 
+<script>
+import ProfileCard from "../components/ProfileCard.vue";
+export default {
+  components: {
+    ProfileCard,
+  },
+};
 </script>
-<style>
-    h1 {
-        text-align: center;
-    }
-    p {
-        text-align: center;
-    }
-    button {
-        text-align: center;
-    }
-</style>
+
+<style lang="scss" scoped></style>
