@@ -9,10 +9,14 @@
 <input  
 id = "lev_input" 
 v-model = "level"
-type = "text"
+type = "number"
 placeholder = "Enter here:"
 /> 
 
+<br>
+<br>
+
+<button v-on:click = 'sendLevel'> Submit </button>
 
 </div>
 </template>
@@ -47,6 +51,23 @@ input{
         background-color: rgba(0, 0, 0, 0.602);
     }
 }
+
+button{
+    text-align: center;
+    width: 20rem;
+    height: 4rem;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #000000ba;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:focus {
+        background-color: rgba(0, 0, 0, 0.602);
+    }
+}
 </style>
 
 <script>
@@ -56,14 +77,12 @@ export default{
             level: null
         }
     },
-    method:{
-        intermediateS(){
-            
-        },
-        beginnerS(){
-
-        }
+    methods:{
+        sendLevel() {
+        db.ref('levels').push(this.level);
+        this.level = '';
     }
+}
 }
 
 
