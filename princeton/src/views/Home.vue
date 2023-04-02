@@ -1,7 +1,5 @@
-<template ref="vantaRef">
+<template>
   <html ref="vantaRef">
-  <body>
-  </body>
     <div class="container" data-aos="fade-left">
       <h1 class="title">Random Swim Workout Generator</h1>
 
@@ -15,32 +13,26 @@
 
       <h2 class="survey_input">How much time do you have to swim?</h2>
 
-      <select name="time" id="survey_input" v-model = "selected">
+      <select name="time" id="survey_input" v-model="selected">
         <option value="blank"></option>
-        <option value="opt1" > 30 minutes </option>
-        <option value="opt2" > 60 minutes </option>
+        <option value="opt1">30 minutes</option>
+        <option value="opt2">60 minutes</option>
       </select>
 
       <br />
 
       <div v-if="op1()">
-
-      <button id="generate_btn" @click="randomID1" > Generate </button>
-
+        <button id="generate_btn" @click="randomID1">Generate</button>
       </div>
 
       <div v-if="op2()">
-      
-      <button id="generate_btn" @click="randomID2" > Generate </button>
-      
+        <button id="generate_btn" @click="randomID2">Generate</button>
       </div>
 
       <div v-if="show">
-
-          <p>  {{ randomWU }} </p>
-          <br>
-          <p>  {{ randomSET }} </p>
-
+        <p>{{ randomWU }}</p>
+        <br />
+        <p>{{ randomSET }}</p>
       </div>
     </div>
   </html>
@@ -74,30 +66,29 @@ export default {
       MainSet4: jsonMainSet4,
       randomWU: null,
       randomSET: null,
-      selected: null
-  
+      selected: null,
     };
   },
   methods: {
-    randomID2(){
-      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length)
-      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length)
-      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises
-      this.randomSET = jsonMainSet1.set[randomIndex].exercises
-      this.show = !this.show
+    randomID2() {
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp1.wu.length);
+      const randomIndex1 = Math.floor(Math.random() * jsonMainSet1.set.length);
+      this.randomWU = jsonWarmUp1.wu[randomIndex].exercises;
+      this.randomSET = jsonMainSet1.set[randomIndex].exercises;
+      this.show = !this.show;
     },
-    randomID1(){
-      const randomIndex = Math.floor(Math.random() * jsonWarmUp2.wu.length)
-      const randomIndex1 = Math.floor(Math.random() * jsonMainSet2.set.length)
-      this.randomWU = jsonWarmUp2.wu[randomIndex].exercises
-      this.randomSET = jsonMainSet2.set[randomIndex].exercises
-      this.show = !this.show
+    randomID1() {
+      const randomIndex = Math.floor(Math.random() * jsonWarmUp2.wu.length);
+      const randomIndex1 = Math.floor(Math.random() * jsonMainSet2.set.length);
+      this.randomWU = jsonWarmUp2.wu[randomIndex].exercises;
+      this.randomSET = jsonMainSet2.set[randomIndex].exercises;
+      this.show = !this.show;
     },
-    op1(){
-      return this.selected === 'opt1'
+    op1() {
+      return this.selected === "opt1";
     },
-    op2(){
-      return this.selected === 'opt2'
+    op2() {
+      return this.selected === "opt2";
     },
   },
   mounted() {
@@ -118,7 +109,7 @@ export default {
       zoom: 1.09,
     });
   },
-  
+
   beforeDestroy() {
     if (this.vantaEffect) {
       this.vantaEffect.destroy();
@@ -129,7 +120,7 @@ export default {
 
 <style lang="scss" scoped>
 body {
- background-color: #0094fe;
+  background-color: #0094fe;
 }
 .title {
   text-align: center;
@@ -183,5 +174,4 @@ select {
     background-color: rgba(0, 0, 0, 0.602);
   }
 }
-
 </style>
