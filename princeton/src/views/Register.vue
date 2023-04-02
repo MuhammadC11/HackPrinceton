@@ -1,6 +1,11 @@
 <template>
   <div>
-    <form id="signup" class="login_container" data-aos="fade-left" @submit.prevent="register()">
+    <form
+      id="signup"
+      class="login_container"
+      data-aos="fade-left"
+      @submit.prevent="register()"
+    >
       <div class="inputs">
         <h1>Create an account</h1>
         <label id="el"> Email: </label>
@@ -140,7 +145,6 @@ input {
   margin-top: 1rem;
   cursor: pointer;
 }
-
 
 body {
   background-color: #0094fe;

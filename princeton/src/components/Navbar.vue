@@ -12,7 +12,7 @@
       </router-link>
     </div>
 
-    <div class="login-btn">
+    <div class="logout-btn">
       <router-link to="/login">
         <button @click="handleSignOut" v-if="isLoggedIn" class="button1">
           Logout
@@ -66,7 +66,11 @@ const handleSignOut = () => {
   margin-right: 55rem;
 }
 .login-btn {
-  margin-left: 30px;
+  margin-left: 15rem;
+  margin-right: 30px;
+}
+.logout-btn {
+  margin-left: -10rem;
   margin-right: 30px;
 }
 .gh_button {
