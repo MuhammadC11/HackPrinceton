@@ -3,7 +3,7 @@
     <div class="container" data-aos="fade-left">
       <p></p>
 
-      <h1 class="title">Random Swim Workout Generator</h1>
+      <h1 class="title">Swim Workout Generator</h1>
 
       <h2 class="survey_input">What do you want to get better at?</h2>
 
@@ -308,6 +308,7 @@ select {
   border-radius: 1rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin: 2rem;
+  margin-bottom: 0;
   transition: all 0.2s ease-in-out;
   &:hover {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
